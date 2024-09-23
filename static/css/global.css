@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    background-color: #777494;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    background-image: url("../img/blending.png");
+    background-position: center 125px;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    user-select: none;
+}
+
+.blending {
+    margin: 125px;
+}
+
+@font-face {
+    font-family: "KyivType";
+    src: url("fonts/KyivTypeTitling-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "InterMedium";
+    src: url("fonts/inter-medium.ttf") format("truetype");
+}
+
