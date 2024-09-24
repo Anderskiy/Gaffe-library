@@ -1,28 +1,55 @@
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, session, redirect, url_for, request
 import os
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
 # Головна сторінка
 @app.route('/')
 def index():
-    return render_template('index.html')
+    language = session.get('language', 'ua')
+    if language == 'uk':
+        return render_template('index_uk.html')
+    else:
+        return render_template('index_ua.html')
+
+# Маршрут для зміни мови
+@app.route('/set_language/<lang>')
+def set_language(lang):
+    session['language'] = lang
+    return redirect(request.referrer or url_for('index'))
 
 @app.route('/about/')
 def about():
-    return render_template('about.html')
+    language = session.get('language', 'ua')
+    if language == 'uk':
+        return render_template('about_uk.html')
+    else:
+        return render_template('about_ua.html')
 
 @app.route('/updates/')
 def updates():
-    return render_template('updates.html')
+    language = session.get('language', 'ua')
+    if language == 'uk':
+        return render_template('updates_uk.html')
+    else:
+        return render_template('updates_ua.html')
 
 @app.route('/resources/')
 def resources():
-    return render_template('resources.html')
+    language = session.get('language', 'ua')
+    if language == 'uk':
+        return render_template('resources_uk.html')
+    else:
+        return render_template('resources_ua.html')
 
 @app.route('/help/')
 def help_page():
-    return render_template('help.html')
+    language = session.get('language', 'ua')
+    if language == 'uk':
+        return render_template('help_uk.html')
+    else:
+        return render_template('help_ua.html')
 
 
 if __name__ == '__main__':

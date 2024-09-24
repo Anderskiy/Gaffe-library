@@ -14,6 +14,10 @@ main {
     font-size: 32px;
 }
 
+.proj-name a {
+    color: black;
+}
+
 .proj-author {
     margin: 0 0 0 49px;
     font-family: Inter, serif;
@@ -95,13 +99,52 @@ nav {
 
 }
 
-.films {
+.content {
     margin: 44px 37px auto 37px;
-    font-family: Inter, serif;
 }
 
-.films-title {
+.content-title {
     font-family: InterMedium, serif;
     font-size: 32px;
 }
 
+.films-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 55px 80px;
+}
+
+.films-block {
+    width: 222px;
+    height: 220px;
+    background-color: #D7D7D7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.films-block:hover{
+ transform: scale(1.05);
+}
+
+.films-block-text {
+    margin-top: 7px;
+    font-family: InterMedium, serif;
+    font-size: 20px;
+    text-align: center;
+    word-wrap: break-word;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.films-block-text:hover {
+ transition: color 0.2s;
+ color: #4f4b77;
+}
