@@ -1,6 +1,6 @@
 main {
     width: 900px;
-    height: 1652px;
+    padding-bottom: 30px;
     background-color: white;
     border-radius: 10px;
     margin: 50px auto 50px auto;
@@ -129,7 +129,7 @@ nav {
 }
 
 .films-block:hover{
- transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .films-block-text {
@@ -144,7 +144,81 @@ nav {
     justify-content: center;
 }
 
-.films-block-text:hover {
- transition: color 0.2s;
- color: #4f4b77;
+.films-block-text a {
+    color: black;
+}
+
+.films-block-text:hover a {
+    transition: color 0.2s;
+    color: #4f4b77;
+}
+
+.film-link {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.film-desc {
+    display: flex;
+    margin-top: 47px;
+    font-family: InterMedium, serif;
+    font-size: 24px;
+}
+
+.film-desc-container {
+    width: 460px;
+    margin-top: 26px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 23px 23px;
+}
+
+.film-desc-desc {
+    display: flex;
+    font-family: Inter, serif;
+    font-size: 20px;
+}
+
+.film-title {
+    display: flex;
+    margin-top: 38px;
+    font-family: InterMedium, serif;
+    font-size: 24px;
+}
+
+.film-ol {
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 26px;
+    font-family: Inter, serif;
+    gap: 20px;
+    padding: 0;
+}
+
+.film-li {
+    font-family: Inter, serif;
+    font-size: 20px;
+}
+
+.film-li-b {
+    font-size: 20px;
+}
+
+.film-li-s {
+    font-size: 18px;
+}
+
+.film-li-image {
+    display: none; /* Изначально скрываем изображение */
+    position: absolute;
+    top: -150px; /* Положение изображения над текстом */
+    left: 0;
+    width: 200px; /* Ширина изображения */
+    height: auto;
+    z-index: 10; /* Поверх всех элементов */
+    border: 2px solid black;
+    border-radius: 5px;
 }

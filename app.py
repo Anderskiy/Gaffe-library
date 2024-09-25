@@ -51,6 +51,19 @@ def help_page():
     else:
         return render_template('help_ua.html')
 
+@app.route('/films/<film_name>/')
+def film(film_name):
+    film_path = os.path.join(os.getcwd(), 'templates', 'films', film_name)
+
+    if os.path.isdir(film_path):
+        language = session.get('language', 'ua')
+        if language == 'uk':
+            return render_template(f'films/{film_name}/{film_name}_uk.html')
+        else:
+            return render_template(f'films/{film_name}/{film_name}_ua.html')
+    else:
+        abort(404)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
