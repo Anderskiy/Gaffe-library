@@ -1,8 +1,23 @@
-from flask import Flask, render_template, abort, session, redirect, url_for, request
+from flask import Flask, render_template, abort, session, redirect, url_for, request, jsonify
+import requests
 import os
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
+
+token = '7890920959:AAHf4p2q5gk6mRY5LJIBKhznZvAqmaVETMs'
+chat_id = '-1002328132480'
+
+
+def send_message_to_telegram(subject, message):
+    text = f'Нову повідомлення з сайту!\nТема: {subject}\nСообщение: {message}'
+    url = f'https://api.telegram.org/bot{token}/sendMessage'
+    data = {'chat_id': chat_id, 'text': text}
+
+    response = requests.post(url, data=data)
+    print(response.text)
+    print(response.status_code == 200)
+    return response.status_code == 200
 
 # Головна сторінка
 @app.route('/')
@@ -63,6 +78,15 @@ def film(film_name):
             return render_template(f'films/{film_name}/{film_name}_ua.html')
     else:
         abort(404)
+
+
+@app.route('/submit_help', methods=['POST'])
+def submit_help():
+    subject = request.form.get('subject')
+    message = request.form.get('message')
+
+    send_message_to_telegram(subject, message)
+    return None
 
 
 if __name__ == '__main__':

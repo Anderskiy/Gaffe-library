@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-32">
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     <link rel="stylesheet" type="text/css" href="../static/css/global.css">
     <title>Бібліотека ляпів</title>
 </head>
 <body>
     <main>
-        <span class="proj-name"><a href="/">Бібліотека науко-технічних ляпів у фільмах</a></span>
+        <span class="proj-name"><a href="/">Бібліотека науково-технічних ляпів у фільмах</a></span>
         <span class="proj-author">Створено <a href="https://anderskiy.info/" target="_blank" rel="noopener noreferrer">@Anderskiy</a></span>
         <nav>
             <div class="nav-back-main">
@@ -32,7 +32,37 @@
         </nav>
         <div class="content">
             <span class="content-title">Допомога</span>
+            <form class="help-form" action="/submit_help" method="POST" onsubmit="return showSuccessMessage()">
+                <div class="form-group">
+                    <label for="subject">Тема звернення:</label>
+                    <input type="text" id="subject" name="subject" placeholder="Введіть тему" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ваше звернення:</label>
+                    <textarea id="message" name="message" placeholder="Введіть ваше звернення" rows="5" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Підтвердити</button>
+                </div>
+                <div id="success-message" style="display:none; color: green; margin-top: 10px;">Повідомлення успішно надіслано</div>
+            </form>
         </div>
     </main>
 </body>
+<script>
+    function showSuccessMessage() {
+        // Показываем сообщение
+        var successMessage = document.getElementById('success-message');
+        successMessage.style.display = 'block';
+
+        // Скрываем сообщение через 5 секунд
+        setTimeout(function() {
+            successMessage.style.display = 'none';
+        }, 5000);
+
+        // Возвращаем true, чтобы форма могла отправиться
+        return true;
+    }
+</script>
+</script>
 </html>
