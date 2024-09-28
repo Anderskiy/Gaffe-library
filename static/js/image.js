@@ -1,9 +1,13 @@
 function showImage(element) {
-    var listItem = element.closest('.film-li'); // Найти текущий <li>
-    listItem.classList.add('show'); // Добавить класс для показа изображения
+    var listItem = element.closest('.film-li');
+    listItem.classList.add('show');
 }
 
 function hideImage(element) {
-    var listItem = element.closest('.film-li'); // Найти текущий <li>
-    listItem.classList.remove('show'); // Убрать класс для скрытия изображения
+    var listItem = element.closest('.film-li');
+
+    setTimeout(function() {
+        listItem.classList.remove('show');
+    }, 1000);
+
 }
