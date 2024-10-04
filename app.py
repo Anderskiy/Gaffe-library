@@ -15,8 +15,6 @@ def send_message_to_telegram(subject, message):
     data = {'chat_id': chat_id, 'text': text}
 
     response = requests.post(url, data=data)
-    print(response.text)
-    print(response.status_code == 200)
     return response.status_code == 200
 
 # Головна сторінка
@@ -86,7 +84,7 @@ def submit_help():
     message = request.form.get('message')
 
     send_message_to_telegram(subject, message)
-    return None
+    return '', 204
 
 
 if __name__ == '__main__':

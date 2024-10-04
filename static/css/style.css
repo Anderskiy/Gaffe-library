@@ -311,6 +311,14 @@ nav {
     background-color: #d1bf6c;
 }
 
+.success-message {
+    display:none;
+    color: green;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: Inter, serif;
+}
+
 @media screen and (max-width: 992px) {
 
     .film-li-b, .film-li {

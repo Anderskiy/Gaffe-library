@@ -44,25 +44,24 @@
                 <div class="form-actions">
                     <button type="submit">Підтвердити</button>
                 </div>
-                <div id="success-message" style="display:none; color: green; margin-top: 10px;">Повідомлення успішно надіслано</div>
+                <span id="success-message" class="success-message">Повідомлення успішно надіслано</span>
             </form>
         </div>
     </main>
 </body>
 <script>
     function showSuccessMessage() {
-        // Показываем сообщение
-        var successMessage = document.getElementById('success-message');
+        const successMessage = document.getElementById('success-message');
         successMessage.style.display = 'block';
 
-        // Скрываем сообщение через 5 секунд
+        document.getElementById('subject').value = '';
+        document.getElementById('message').value = '';
+
         setTimeout(function() {
             successMessage.style.display = 'none';
-        }, 5000);
+        }, 4000);
 
-        // Возвращаем true, чтобы форма могла отправиться
         return true;
     }
-</script>
 </script>
 </html>
