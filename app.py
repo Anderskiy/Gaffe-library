@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-token = '7890920959:AAHf4p2q5gk6mRY5LJIBKhznZvAqmaVETMs'
+token = os.environ.get('TOKEN')
 chat_id = '-1002328132480'
 
 
